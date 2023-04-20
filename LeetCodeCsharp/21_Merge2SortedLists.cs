@@ -5,6 +5,8 @@ public class Program21
 {
 	public static void Test()
 	{
+		Console.WriteLine($"{instructions}");
+
 		// test1 list1 = { 1, 2, 4 };
 		ListNode l1 = new(1);
 		l1.next = new(2);
@@ -65,19 +67,22 @@ public class Program21
 		ListNode mergedList = new();
 		ListNode current = mergedList;
 
-		// traverse both lists, compare their current nodes
+		// this method sorts the merged list -> traverse both lists, compare current nodes
 		while (list1 != null && list2 != null)
 		{
+			// if l1 is less, 'current' list = current l1 element, & advance l1 to its next element
 			if (list1.val < list2.val)
 			{
 				current.next = list1;
 				list1 = list1.next;
 			}
+			// if l2 is less, 'current' list = current l2 element, & advance l2 to its next element
 			else
 			{
 				current.next = list2;
 				list2 = list2.next;
 			}
+			// add latest value to list "current"
 			current = current.next;
 		}
 
@@ -86,6 +91,13 @@ public class Program21
 
 		return mergedList.next;
 	}
+
+	private const string instructions = "INSTRUCTIONS: \r\n" +
+		"You are given the heads of two sorted linked lists list1 and list2.\r\n\r\n" +
+		"Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.\r\n\r\n" +
+		"Return the head of the merged linked list.\r\n\r\n" +
+		"WARNING: \r\n" +
+		"This problem has a weird homerolled 'singly linked list' object ('ListNode') instead of using an existing C# type, like 'LinkedList'\r\n\r\n";
 }
 
 public class ListNode
