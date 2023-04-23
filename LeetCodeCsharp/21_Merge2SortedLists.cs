@@ -98,16 +98,16 @@ public class Program21
 		"Return the head of the merged linked list.\r\n\r\n" +
 		"WARNING: \r\n" +
 		"This problem has a weird homerolled 'singly linked list' object ('ListNode') instead of using an existing C# type, like 'LinkedList'\r\n\r\n";
-}
 
-public class ListNode
-{
-	public int val;
-	public ListNode? next;
-
-	public ListNode(int val = 0, ListNode? next = null)
+	public class ListNode
 	{
-		this.val = val;
-		this.next = next;
+		public int val;
+		public ListNode? next;
+
+		public ListNode(int val = 0, ListNode? next = null)
+		{
+			this.val = val;
+			this.next = next;
+		}
 	}
 }
