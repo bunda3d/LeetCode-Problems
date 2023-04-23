@@ -64,6 +64,7 @@ public class Program876
 		Console.WriteLine($"{explainer}");
 	}
 
+	//paste this method in leetcode:
 	public ListNode MiddleNode(ListNode head)
 	{
 		ListNode slow = head;
